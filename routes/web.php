@@ -15,13 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return 'Hello World!';
-});
-
-Route::get('/about', function(){
-    return view('pages.about');
-});
+Route::get('/', 'pagesController@index');
+Route::get('/about', 'pagesController@about');
+Route::get('/services', 'pagesController@services');
 
 Route::get('/user/{id}/{name}', function($id, $name){
     return 'This is user '.$name.'with and id of '.$id;
